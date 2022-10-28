@@ -9,8 +9,6 @@ const data = {
     bio: "my name is Adebobola, i'm a developer with interest in web3",
 };
 
-const resData = JSON.stringify(data);
-
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -28,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res, next) => {
-    res.status(200).send(resData);
+    res.status(200).json(data);
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 2000);
